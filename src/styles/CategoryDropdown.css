@@ -1,0 +1,35 @@
+.category-dropdown {
+    display: flex;
+    margin: 25px 0px;
+}
+
+.styled-select {
+    padding: 15px;
+    width: 50vh;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../assets/down-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 1.25rem;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.styled-select:focus {
+    border-color: #66afe9;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: none;
+}
+
+.styled-select option.selected-option {
+    font-weight: bold;
+}
+
+

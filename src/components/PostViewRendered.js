@@ -2,7 +2,7 @@ import React from 'react';
 import PostListPage from './PostListPage';
 import PostDetail from './PostDetail';
 
-const PostView = ({ currentView, selectedPost, categories, navigateToPostDetail }) => {
+const PostViewRendered = ({ currentView, selectedPost, categories, navigateToPostDetail }) => {
     return (
         <>
             {currentView === 'postList' && (
@@ -18,4 +18,4 @@ const PostView = ({ currentView, selectedPost, categories, navigateToPostDetail 
     );
 };
 
-export default PostView;
+export default PostViewRendered;

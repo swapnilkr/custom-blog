@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { fetchCategories } from './helpers/api';
-import PostView from './components/PostView'
+import PostViewRendered from './components/PostViewRendered'
 
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			<PostView
+			<PostViewRendered
 				currentView={currentView}
 				selectedPost={selectedPost}
 				categories={categories}

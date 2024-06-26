@@ -1,0 +1,15 @@
+.post-list-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1.75rem;
+}
+
+.post-header {
+    font-size: 2.5rem;
+    line-height: 1.125;
+    letter-spacing: -1px;
+    color: rgba(34, 34, 34, 1);
+    font-weight: 700;
+    margin-top: 0px;
+    margin-bottom: 1rem;
+}
