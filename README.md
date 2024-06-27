@@ -20,10 +20,10 @@ Here're some of the project's best features:
 <p>1. Clone this project</p>
 
 ```
-https://github.com/swapnilkr/custom-blog.git
+git clone https://github.com/swapnilkr/custom-blog.git
 ```
 
-<p>2. Navigate into the project directory:</p>
+<p>2. Open IDE of your choice and in the terminal navigate into the project directory:</p>
 
 ```
 cd custom-blog
