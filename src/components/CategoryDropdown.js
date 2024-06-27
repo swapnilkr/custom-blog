@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styles/CategoryDropdown.css';
 
-const CategoryDropdown = ({ categories, setSelectedCategory }) => {
+const CategoryDropdown = ({ categories, setPage ,setSelectedCategory }) => {
     const handleCategoryChange = (event) => {
         setSelectedCategory(event.target.value);
+        setPage(1);
     };
 
     return (

@@ -5,9 +5,20 @@ import '../styles/PostList.css'
 const PostList = ({ posts }) => {
     return (
         <div className="post-list">
-            {posts.map((post) => (
-                <PostCard key={post?.slug} post={post} />
-            ))}
+            {posts.length > 0 ?
+                <>
+                    {posts.map((post) => (
+                        <PostCard key={post?.slug} post={post} />
+                    ))}
+                </>
+                :
+                <>
+                    <div className='fallback'>
+                        Oops !! You have watched all. Explore other category ...
+                    </div>
+                </>
+            }
+
         </div>
     );
 };

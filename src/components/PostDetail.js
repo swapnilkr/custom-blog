@@ -5,6 +5,7 @@ import BannerImage from './BannerImage';
 import { formatDate } from '../helpers/const';
 import { Link } from 'react-router-dom';
 import '../styles/PostDetail.css';
+import Shimmer from './Shimmer';
 
 const PostDetail = () => {
     const { slug } = useParams();
@@ -19,14 +20,14 @@ const PostDetail = () => {
     }, [slug]);
 
     if (!post) {
-        return <div>Loading...</div>;
+        return <div><Shimmer view="detail" /></div>;
     }
 
     return (
         <>
             <BannerImage view="detail" imgSrc={post?.featured_image} altImg={post?.title} />
             <div className="post-detail">
-                <h1 className='post-detail-header'>{post?.title || ''}</h1>
+                <h1 className='post-detail-header' dangerouslySetInnerHTML={{ __html: post?.title || '' }}></h1>
 
                 <div className='post-user-profile'>
                     <Link to={`${post?.author?.profile_URL}`} external>

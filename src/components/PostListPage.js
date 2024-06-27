@@ -22,14 +22,10 @@ const PostListPage = () => {
         fetchPostsData();
     }, []);
 
-    useEffect(() => {
-        setPage(1)
-        fetchPostsData(1, selectedCategory);    
-    }, [selectedCategory]);
 
     useEffect(() => {
         fetchPostsData();
-    }, [page]);
+    }, [page, selectedCategory]);
 
 
     const fetchCategoriesData = async () => {
@@ -55,9 +51,9 @@ const PostListPage = () => {
             <BannerImage view="list" />
             <div className="post-list-page">
                 <p className='post-header'>Latest articles</p>
-                <CategoryDropdown categories={categories} setSelectedCategory={setSelectedCategory} />
+                <CategoryDropdown categories={categories} setPage={setPage} setSelectedCategory={setSelectedCategory} />
                 {loading ? (
-                    <Shimmer />
+                    <Shimmer view= "list" />
                 ) : (
                     <PostList posts={posts} />
                 )}
