@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+<h1 align="center" id="title">Custom Blog</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p id="description">This project implements a frontend for the blog using WordPress.com's REST API. It includes features for listing multiple posts, displaying post details, and implementing category-based filtering with pagination.</p>
 
-## Available Scripts
+<h2>🚀 Demo</h2>
 
-In the project directory, you can run:
+<a href="https://custom-blog-six.vercel.app/">Custom Blog</a>
 
-### `npm start`
+<h2>🧐 Features</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Here're some of the project's best features:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*   Responsive Design
+*   Post Listing with Pagination
+*   Category Filtering
+*   Post Detail View
 
-### `npm test`
+<h2>🛠️ Installation Steps:</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>1. Clone this project</p>
 
-### `npm run build`
+```
+https://github.com/swapnilkr/custom-blog.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>2. Navigate into the project directory:</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd custom-blog
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p>2. Install Dependency</p>
 
-### `npm run eject`
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<p>3. Run this command</p>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<p>4. Open your browser and visit -&gt;</p>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+http://localhost:8000/
+```
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<h2>💻 Built with</h2>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Technologies used in the project:
+<div align="center">
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/117447155-6a868a00-af3d-11eb-9cfe-245df15c9f3f.png" alt="JavaScript" title="JavaScript"/></code>
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/183897015-94a058a6-b86e-4e42-a37f-bf92061753e5.png" alt="React" title="React"/></code>
+</div>
 
-### Code Splitting
+  
+<h2><g-emoji class="g-emoji" alias="handshake" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f91d.png">🤝</g-emoji> Contributing </h2>
+Contributions, issues and feature requests are welcome.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<h2> Author </h2>
+<h3 align="center">Hi 👋, I'm Swapnil</h3>
+<hr>
+<h4 align="center">A passionate full stack web developer.</h4>
 
-### Analyzing the Bundle Size
+- 👨‍💻 All of my projects are available at [https://github.com/swapnilkr](https://github.com/swapnilkr)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 📫 How to reach me **swapnilkr099@gmail.com**
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 📄 Know about my experiences [https://swapnilkr.github.io/CodeGraffiti/](https://swapnilkr.github.io/CodeGraffiti)
