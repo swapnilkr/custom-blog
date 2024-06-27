@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { fetchPosts, fetchCategories } from '../helpers/api.js';
 import PostList from './PostList.js';
 import CategoryDropdown from './CategoryDropdown.js';
@@ -9,13 +9,14 @@ import '../styles/PostListPage.css';
 import '../styles/Shimmer.css';
 
 
-const PostListPage = () => {
+function PostListPage() {
     const [posts, setPosts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('');
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [loading, setLoading] = useState(false);
+    const categoryDropdownRef = useRef(null);
 
     useEffect(() => {
         fetchCategoriesData();
@@ -25,6 +26,7 @@ const PostListPage = () => {
 
     useEffect(() => {
         fetchPostsData();
+        scrollToCategoryDropdown();
     }, [page, selectedCategory]);
 
 
@@ -46,14 +48,24 @@ const PostListPage = () => {
         }
     };
 
+    const scrollToCategoryDropdown = () => {
+        if (categoryDropdownRef.current) {
+            categoryDropdownRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
             <BannerImage view="list" />
             <div className="post-list-page">
                 <p className='post-header'>Latest articles</p>
-                <CategoryDropdown categories={categories} setPage={setPage} setSelectedCategory={setSelectedCategory} />
+                <CategoryDropdown
+                    categories={categories}
+                    setPage={setPage}
+                    setSelectedCategory={setSelectedCategory}
+                    innerRef={categoryDropdownRef} />
                 {loading ? (
-                    <Shimmer view= "list" />
+                    <Shimmer view="list" />
                 ) : (
                     <PostList posts={posts} />
                 )}

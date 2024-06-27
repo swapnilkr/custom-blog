@@ -12,6 +12,10 @@ const PostDetail = () => {
     const [post, setPost] = useState(null);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    useEffect(() => {
         const fetchPostDetail = async () => {
             const postData = await fetchSinglePost(slug);
             setPost(postData);
