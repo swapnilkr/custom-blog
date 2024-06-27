@@ -1,27 +1,56 @@
 import React from 'react';
 import '../styles/PostCard.css';
+import { categoryColorMapping } from '../helpers/const';
 
 const PostCard = ({ post, onClick }) => {
+    let categoryName = Object.keys(post?.categories)[0] || '';
+
     return (
-        <div className="post-card" onClick={onClick}>
-            <div className="post-thumbnail">
-                <img src={post.post_thumbnail.URL} alt={post.title} />
+        <div className="post-card shadow" onClick={onClick}>
+            <div className='post-card-header'>
+
+                <span className='post-card-category-color' style={{ backgroundColor: `${categoryColorMapping[categoryName || 'default']}` }}>
+                </span>
+                <span className='post-categories'>
+                    {post?.categories[categoryName]?.name}
+                </span>
             </div>
-            <div className="post-content">
-                <h2 className="post-title">{post.title}</h2>
-                <p className="post-date">{formatDate(post.date)}</p>
-                <p className="post-categories">
-                    Categories: {Object.values(post.categories).map((category) => category.name).join(', ')}
-                </p>
+            <div className="post-thumbnail">
+                <img src={post?.post_thumbnail?.URL} alt={post?.title} />
+            </div>
+            <div className="post-card-content">
+                {/* to handle unicode */}
+                <h4 className="post-card-title"dangerouslySetInnerHTML={{ __html: post.title }}></h4>
+                <p className="post-card-date">{formatDate(post?.date)}</p>
             </div>
         </div>
     );
 };
 
+
 const formatDate = (dateString) => {
     const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - date) / 1000);
+
+    const intervals = {
+        year: 31536000,
+        month: 2592000,
+        week: 604800,
+        day: 86400,
+        hour: 3600,
+        minute: 60,
+        second: 1,
+    };
+
+    for (const interval in intervals) {
+        const value = Math.floor(diffInSeconds / intervals[interval]);
+        if (value >= 1) {
+            return `${value} ${interval}${value > 1 ? 's' : ''} ago`;
+        }
+    }
+
+    return 'just now';
 };
 
 export default PostCard;

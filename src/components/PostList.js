@@ -1,5 +1,5 @@
 import React from 'react';
-import PostCard from './PostCard';
+import PostCard from './PostCard.js';
 import '../styles/PostList.css'
 
 const PostList = ({ posts, navigateToPostDetail }) => {

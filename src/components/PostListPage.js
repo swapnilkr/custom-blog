@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import PostList from './PostList';
-import CategoryDropdown from './CategoryDropdown';
+import PostList from './PostList.js';
+import CategoryDropdown from './CategoryDropdown.js';
 import Shimmer from './Shimmer';
-import BannerImage from './BannerImage';
+import BannerImage from './BannerImage.js';
 import '../styles/PostListPage.css';
 import '../styles/Shimmer.css';
-import { fetchPosts } from '../helpers/api';
+import { fetchPosts } from '../helpers/api.js';
 
 const PostListPage = ({ categories, navigateToPostDetail }) => {
     const [selectedCategory, setSelectedCategory] = useState('');
