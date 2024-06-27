@@ -2,15 +2,11 @@ import React from 'react';
 import PostCard from './PostCard.js';
 import '../styles/PostList.css'
 
-const PostList = ({ posts, navigateToPostDetail }) => {
-    const handlePostClick = (post) => {
-        navigateToPostDetail(post);
-    };
-
+const PostList = ({ posts }) => {
     return (
         <div className="post-list">
             {posts.map((post) => (
-                <PostCard key={post.slug} post={post} onClick={() => handlePostClick(post)} />
+                <PostCard key={post?.slug} post={post} />
             ))}
         </div>
     );

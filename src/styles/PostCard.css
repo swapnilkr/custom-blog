@@ -3,9 +3,19 @@
     overflow: hidden;
     cursor: pointer;
     box-sizing: border-box;
-    border: 0 soldi #e5e7eb;
+    border: 0 solid #e5e7eb;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    
+}
+
+.post-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-card a:visited {
+    color: inherit;
 }
 
 .post-card-header {
