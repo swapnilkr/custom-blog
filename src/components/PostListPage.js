@@ -52,7 +52,7 @@ const PostListPage = () => {
 
     return (
         <>
-            <BannerImage />
+            <BannerImage view="list" />
             <div className="post-list-page">
                 <p className='post-header'>Latest articles</p>
                 <CategoryDropdown categories={categories} setSelectedCategory={setSelectedCategory} />

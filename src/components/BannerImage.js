@@ -3,7 +3,7 @@ import '../styles/BannerImage.css';
 import HeaderImgZoom from '../assets/header_zoom.jpg'
 import HeaderImgLowRes from '../assets/header.jpg'
 
-const BannerImage = () => {
+const BannerImage = ({ view, imgSrc = '', altImg = '' }) => {
     const [isLowRes, setIsLowRes] = useState(false);
 
     useEffect(() => {
@@ -21,12 +21,22 @@ const BannerImage = () => {
 
     return (
         <div className={`banner`}>
-            {isLowRes ?
-                <img src={HeaderImgLowRes} alt="Banner" />
-                :
-                <img src={HeaderImgZoom} alt="Banner" />
+            {
+                view === 'list' ?
+                    <>
+                        {isLowRes ?
+                            <img src={HeaderImgLowRes} alt="Banner" />
+                            :
+                            <img src={HeaderImgZoom} alt="Banner" />
+                        }
+                        <p className='banner-text'>The Truecaller Blog</p>
+                    </>
+                    :
+                    <>
+                        <img src={imgSrc} alt={altImg} />
+                    </>
             }
-            <p className='banner-text'>The Truecaller Blog</p>
+
         </div>
     );
 }

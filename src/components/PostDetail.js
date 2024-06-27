@@ -1,26 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { fetchSinglePost } from '../helpers/api';
+import BannerImage from './BannerImage';
+import { formatDate } from '../helpers/const';
+import { Link } from 'react-router-dom';
 import '../styles/PostDetail.css';
 
-const PostDetail = ({ post }) => {
-    return (
-        <div className="post-detail">
-            <div className="post-header">
-                <img src={post.featured_image.URL} alt={post.title} />
-                <div className="post-header-content">
-                    <h2 className="post-title">{post.title}</h2>
-                    <p className="post-date">{formatDate(post.date)}</p>
-                    <p className="post-author">Author: {post.author.name}</p>
-                </div>
-            </div>
-            <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
-        </div>
-    );
-};
+const PostDetail = () => {
+    const { slug } = useParams();
+    const [post, setPost] = useState(null);
 
-const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('en-US', options);
+    useEffect(() => {
+        const fetchPostDetail = async () => {
+            const postData = await fetchSinglePost(slug);
+            setPost(postData);
+        };
+        fetchPostDetail();
+    }, [slug]);
+
+    if (!post) {
+        return <div>Loading...</div>;
+    }
+
+    return (
+        <>
+            <BannerImage view="detail" imgSrc={post?.featured_image} altImg={post?.title} />
+            <div className="post-detail">
+                <h1 className='post-detail-header'>{post?.title || ''}</h1>
+
+                <div className='post-user-profile'>
+                    <Link to={`${post?.author?.profile_URL}`} external>
+
+                        <img src={post?.author?.avatar_URL || ''} alt="user-img" />
+                    </Link>
+                    <div>
+                        <Link to={`${post?.author?.profile_URL}`} external>
+                            <div className='post-author'>
+                                {post?.author?.name}
+                            </div>
+                        </Link>
+                        <div className='post-published-date'>
+                            {formatDate(post?.date)}
+                        </div>
+
+                    </div>
+                </div>
+                <div className='post-content' dangerouslySetInnerHTML={{ __html: post.content }} />
+            </div>
+        </>
+
+    );
 };
 
 export default PostDetail;
