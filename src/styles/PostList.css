@@ -1,0 +1,14 @@
+
+.post-list {
+    display: grid;
+    width: 100%;
+    padding: 15px 0px 40px;
+}
+
+@media screen and (min-width: 768px) {
+    .post-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 1.25rem;
+        gap: 1.25rem;
+    }
+}
