@@ -3,8 +3,9 @@
     flex-direction: row;
     justify-content: space-between;
     max-width: 28rem;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
     margin-bottom: 3.25rem;
     margin-top: 1.25rem;
 }
@@ -28,4 +29,12 @@
     opacity: 0.5;
     background-color: grey;
     cursor: not-allowed !important;
+}
+
+
+@media screen and (min-width: 500px) {
+    .pagination-container {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }

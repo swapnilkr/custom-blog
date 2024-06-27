@@ -27,9 +27,9 @@ const Shimmer = ({ view }) => {
                                 </div>
                             </div>
                             <div className="shimmer-content">
-                                <div className="shimmer-line"></div>
-                                <div className="shimmer-line"></div>
-                                <div className="shimmer-line"></div>
+                                {Array.from({ length: 10 }).map((_, index) => (
+                                    <div key={index} className="shimmer-line"></div>
+                                ))}
                             </div>
                         </div>
                     </div>
