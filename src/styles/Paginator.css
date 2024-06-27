@@ -26,4 +26,6 @@
 
 .disabled {
     opacity: 0.5;
+    background-color: grey;
+    cursor: not-allowed !important;
 }
