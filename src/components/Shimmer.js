@@ -1,10 +1,17 @@
 const Shimmer = () => {
     return (
-        Array.from({ length: 4 }).map((_, index) => (
-            <div key={index} className="shimmer-wrapper">
-                <div className="shimmer"></div>
+        <>
+            <div className="shimmer-container">
+                {
+                    Array.from({ length: 20 }).map((_, index) => (
+                        <div key={index} className="shimmer-wrapper">
+                            <div className="shimmer"></div>
+                        </div>
+                    ))
+                }
             </div>
-        ))
+        </>
+
     )
 }
 
