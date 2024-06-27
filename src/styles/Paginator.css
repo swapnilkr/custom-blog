@@ -1,0 +1,29 @@
+.pagination-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 28rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.25rem;
+  
+}
+
+.pagination-container span {
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    font-size: .75rem;
+    line-height: 1.125;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+}
+
+.current {
+    background-color: rgba(0, 135, 255, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.disabled {
+    opacity: 0.5;
+}

@@ -24,6 +24,7 @@ const PostListPage = () => {
 
     useEffect(() => {
         setPage(1)
+        fetchPostsData(1, selectedCategory);    
     }, [selectedCategory]);
 
     useEffect(() => {
